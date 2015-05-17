@@ -4,6 +4,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'open-uri'
+require 'fileutils'
 Bundler.require
 
 TOTAL_PAGES = 7
@@ -17,6 +18,9 @@ class Audio
     @path = name
   end
 end
+
+directory_name = "#{Dir.home}/enoise-audios"
+FileUtils::mkdir_p(directory_name) unless File.exists?(directory_name)
 
 Parallel.map(1..TOTAL_PAGES, :in_threads=> 10, :progress => "Get URLSs") do |page|
   page = Nokogiri::HTML(open("http://www.myinstants.com/?page=#{page+1}"))  
@@ -35,9 +39,10 @@ Parallel.map(1..TOTAL_PAGES, :in_threads=> 10, :progress => "Get URLSs") do |pag
 end
 
 Parallel.map(audios, :in_threads=> 10, :progress => "Downloading audios") do |audio|
+    
  begin
    download = open("http://www.myinstants.com/media/sounds/#{audio.path}")
-   IO.copy_stream(download, "#{Dir.home}/audios/#{audio.name}")
+   IO.copy_stream(download, "#{Dir.home}/enoise-audios/#{audio.name}")
  rescue => e
    not_downloaded << audio.name
  end
