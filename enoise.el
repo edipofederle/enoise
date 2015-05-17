@@ -12,4 +12,7 @@
 		(dolist (elt files values)
 			(setq values (cons (replace-regexp-in-string "\\..*" "" (file-name-nondirectory elt)) values)))))
 
+
+(global-set-key (kbd "C-n") 'play) 
+
 (provide 'enoise)
