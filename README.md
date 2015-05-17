@@ -8,6 +8,12 @@ This script has a ```TOTAL_PAGES``` with number of pages you want download.
 
 3. Play with ```C-n```. Here you can use autocompelte.
 
+If you want use another keys to invoke ```play``` use:
+
+```
+(global-set-key (kbd "your key") 'play)
+```
+
 ## DEMO
 
 [https://www.youtube.com/embed/B6rbpgfCuyo](https://www.youtube.com/embed/B6rbpgfCuyo)
