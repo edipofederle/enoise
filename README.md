@@ -6,9 +6,11 @@ This script has a ```TOTAL_PAGES``` with number of pages you want download.
 
 2. Copy ```enoise.el``` to you Emacs Path (```/Users/elf/.emacs.d/site-lisp/own```, in my case).
 
-3. Play with ```C-n```. Here you can use autocomplete (```TAB```).
+3. Play with ```C-n```. Here you can use autocompelte.
 
-## Demo
+## DEMO
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/B6rbpgfCuyo" frameborder="0" allowfullscreen></iframe>
+[https://www.youtube.com/embed/B6rbpgfCuyo](https://www.youtube.com/embed/B6rbpgfCuyo)
+
+
 
